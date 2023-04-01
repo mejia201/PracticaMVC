@@ -1,0 +1,89 @@
+﻿@model IEnumerable<PracticaMVC.Models.equipos>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Equipos</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tipo_equipo_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.marca_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.modelo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.anio_compra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.costo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vida_util)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.estado_equipo_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.estado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipo_equipo_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.marca_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.modelo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.anio_compra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.costo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vida_util)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estado_equipo_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estado)
+            </td>
+            <td>
+                <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.id_equipos">Edit</a> |
+                    <a class="btn btn-warning" asp-action="Details" asp-route-id="@item.id_equipos">Details</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.id_equipos">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
