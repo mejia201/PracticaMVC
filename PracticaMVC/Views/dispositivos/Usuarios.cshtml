@@ -1,0 +1,122 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+    IEnumerable<string> strList = new List<string> { "POO", "TW", "MAT3", "FIS1" };
+
+}
+
+
+<h1>Helpers</h1>
+
+<div class="form-group row mb-4 mt-4">
+    <div class="col-sm-2">
+        @Html.Label("lblNombre", "Nombre Usuario")
+    </div>
+    <div class="col-sm-4">
+        @Html.TextBox("nombreUsuario", "", new {@class = "form-control"})
+
+    </div>
+</div>
+
+
+<div class="form-group row mb-4 mt-4">
+    <div class="col-sm-2">
+        @Html.Label("lblPassword", "Password")
+    </div>
+    <div class="col-sm-4">
+        @Html.Password("Contrasena","", new{@class="form-control"})
+    </div>
+</div>
+
+
+<div class="form-group row mb-4 mt-4">
+    <div class="col-sm-2">
+        @Html.Label("lblGenero", "Genero")
+    </div>
+    <div class="col-sm-4">
+        @Html.RadioButton("genero", "Maculino", true, new{id = "masculino"})
+        Masculino
+
+        @Html.RadioButton("genero", "Femenino", false, new{id = "femenino"})
+        Femenino
+
+    </div>
+</div>
+
+
+<div class="form-group row mb-4">
+    <div class="col-sm-2">
+        @Html.Label("lblDireccion", "Direccion")
+    </div>
+    <div class="col-sm-4">
+        @Html.TextArea("direccion", "", new {@class="form-control", id="idDireccion"})
+    </div>
+</div>
+
+
+
+<div class="form-group row mb-4">
+    <div class="col-sm-2">
+        @Html.Label("lblPasatiempos", "Pasatiempos")
+    </div>
+    <div class="col-sm-4">
+        @Html.CheckBox("Bailar", true)
+        Bailar
+        @Html.CheckBox("Correr", false)
+        Correr
+        @Html.CheckBox("Escalar", false)
+        Escalar
+        @Html.CheckBox("Peliculas", false)
+        Peliculas
+    </div>
+</div>
+
+
+
+<div class="form-group row mb-4">
+    <div class="col-sm-2">
+        @Html.Label("lblCursos", "Cursos")
+    </div>
+    <div class="col-sm-4">
+        @Html.DropDownList("ddlCurso", new SelectList(strList,
+        strList.FirstOrDefault()), "-- Seleccionar curso ----" )
+
+    </div>
+</div>
+
+
+
+<div class="form-group row mb-4">
+    <div class="col-sm-2">
+        @Html.Label("lblSeleccione", "Seleccione")
+    </div>
+    <div class="col-sm-4">
+        @Html.ListBox("Seleccionar habilidades", new List<SelectListItem>{
+        new SelectListItem {Text = "C #", Value = "1"},
+        new SelectListItem {Text = "ASP.NET", Value = "2"},
+        new SelectListItem {Text = "ASP.NET Core", Value = "3"},
+        new SelectListItem {Text = "Azure", Value = "4"}
+        })
+
+    </div>
+</div>
+
+
+<div class="form-group row mb-4 d-flex">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4">
+        <input type="submit" class="btn btn-success form-control" value="Enviar Datos" />
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
